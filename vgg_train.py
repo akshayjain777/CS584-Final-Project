@@ -77,12 +77,12 @@ model = tf.keras.models.Model(vgg_input,decoder_out)
 model.layers[1].trainable = False
 
 print(model.summary())
-model_img = "model_arch.jpg"
-tf.keras.utils.plot_model(model, to_file = model_img, show_shapes=True, show_layer_names=True)
+# model_img = "model_arch.jpg"
+# tf.keras.utils.plot_model(model, to_file = model_img, show_shapes=True, show_layer_names=True)
 
-# optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
-# model.compile(optimizer=optimizer, loss='mse', metrics=['acc'])
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
+model.compile(optimizer=optimizer, loss='mse', metrics=['acc'])
 
-# model.fit(X_vgg, Y, epochs = 25, batch_size = 1)
-# model.save("model_vgg_25.h5")
+model.fit(X_vgg, Y, epochs = 25, batch_size = 1)
+model.save("model.h5")
 print("Done")
