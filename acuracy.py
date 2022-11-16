@@ -16,4 +16,3 @@ img_pred = cv2.imread(img_pred_path)
 
 
 print("SSIM: ",ssim(img,img_pred))
-print("PSNR: ",psnr(img,img_pred))
